@@ -1,0 +1,119 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data files (large datasets)
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+*.xls
+
+# Model files (large weights)
+models/*.h5
+models/*.pkl
+models/*.pt
+models/*.pth
+*.h5
+*.pkl
+*.pt
+*.pth
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environmental files
+.env
+.env.local
+config.local.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Research/Output files (generated)
+results/
+outputs/
+experiments/
+figures/
+
+# TensorBoard
+runs/
+tb_logs/
+
+# Other
+.gitkeep
