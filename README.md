@@ -283,9 +283,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ✉️ Contact & Support
 
-- **Author**: Sai Ram
-- **Email**: your.email@example.com
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Author**: Sai Dumpala
+- **Email**: dumpalasairamkrishnareddy@gmail.com
+- **GitHub**: https://github.com/SAIDUMPALA01/medical-image-classification-system1
 - **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
 
 ## 🙏 Acknowledgments
@@ -301,13 +301,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Citation
 
-If you use this project in your research, please cite:
 
 ```bibtex
 @software{pneumonia_detection_2025,
-  author = {Sai Ram},
+  author = {Sai Dumpala},
   title = {Pneumonia Detection using Convolutional Neural Networks},
   year = {2025},
-  url = {https://github.com/yourusername/pneumonia-detection-cnn}
+  url = {https://github.com/SAIDUMPALA01/medical-image-classification-system1}
 }
 ```
