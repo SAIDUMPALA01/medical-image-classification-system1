@@ -286,7 +286,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Author**: Sai Dumpala
 - **Email**: dumpalasairamkrishnareddy@gmail.com
 - **GitHub**: https://github.com/SAIDUMPALA01/medical-image-classification-system1
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **LinkedIn**: www.linkedin.com/in/sai-dumpala
 
 ## 🙏 Acknowledgments
 
