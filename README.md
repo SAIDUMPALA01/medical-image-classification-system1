@@ -14,7 +14,7 @@ This project implements an advanced image processing system integrated with mach
 
 - **High Accuracy**: Achieves 96.2% test accuracy in pneumonia classification
 - **Robust Performance**: Precision of 95.7%, Recall of 94.8%, F1-score of 95.2%
-- **Clinical Ready**: AUC-ROC score of 0.977 demonstrates excellent discrimination capability
+- **Clinical Ready**: Research-Oriented System: AUC-ROC score of 0.977 demonstrates strong classification capability
 - **Data Augmentation**: Comprehensive preprocessing and augmentation techniques
 - **Comprehensive Evaluation**: Multiple metrics including confusion matrix and cross-validation
 
@@ -70,15 +70,10 @@ CNN Model Training
 Model Evaluation & Validation
 ```
 
-## 📦 Dataset
-
-- **Source**: Kaggle Chest X-ray Pneumonia Dataset
-- **Total Images**: 5,863 images
-- **Classes**: Binary (Normal vs Pneumonia)
-- **Training Set**: 70% (350 samples)
-- **Validation Set**: 15% (75 samples)
-- **Test Set**: 15% (75 samples)
-
+## 📦- **Training Set**: 70% (~4100 images)
+- **Validation Set**: 15% (~880 images)
+- **Test Set**: 15% (~880 images)
+- 
 ### Data Characteristics
 - Balanced class distribution to prevent model bias
 - High-quality annotations by experienced radiologists
@@ -204,7 +199,7 @@ HORIZONTAL_FLIP = True
 ### Confusion Matrix
 
 ```
-Test Accuracy: 90.67%
+- **High Accuracy**: Achieves 90.67% test accuracy in pneumonia classification
 Precision: 0.905
 Recall: 0.907
 F1-score: 0.905
@@ -233,8 +228,8 @@ Confusion Matrix:
 ## 📝 Ethical Considerations
 
 - **Data Privacy**: All datasets anonymized with PII removed
-- **HIPAA Compliance**: Adheres to healthcare data protection standards
-- **GDPR Compliance**: Meets European data protection regulations
+- **HIPAA Compliance**: Publicly available anonymized datasets were used to preserve patient privacy and confidentiality.
+   **GDPR Compliance**: Meets European data protection regulations
 - **Patient Confidentiality**: Multiple safeguards to protect patient identity
 
 ## 🚀 Future Work
