@@ -1,5 +1,9 @@
 # Medical Image Classification System
-![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![TensorFlow 2.x](https://img.shields.io/badge/TensorFlow-2.x-orange)
+
+![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![TensorFlow 2.x](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Accuracy](https://img.shields.io/badge/Test%20Accuracy-96.2%25-brightgreen)
 
 A comprehensive deep learning-based medical imaging solution for automated pneumonia detection from chest X-ray images using Convolutional Neural Networks (CNNs). This is the final Master's project from Birmingham City University.
 
@@ -9,12 +13,14 @@ A comprehensive deep learning-based medical imaging solution for automated pneum
 
 This project implements an advanced image processing system integrated with machine learning algorithms to improve the diagnostic process for pneumonia detection. The system automates the analysis of chest X-ray images, providing radiologists with accurate and timely insights to enhance clinical decision-making.
 
-### Key Features
+---
+
+## ✨ Key Features
 
 - **High Test Accuracy:** Achieves 96.2% test accuracy in pneumonia classification
 - **Strong Validation Performance:** 90.67% validation accuracy during training
 - **Robust Performance:** Precision of 95.7%, Recall of 94.8%, F1-score of 95.2%
-- **Research-Oriented System:** Designed to assist clinical decision-making
+- **Research-Oriented Deep Learning System:** Designed to assist clinical decision-making
 - **Strong Discrimination:** AUC-ROC score of 0.977 demonstrates excellent classification capability
 - **Data Augmentation:** Comprehensive preprocessing and augmentation techniques
 - **Comprehensive Evaluation:** Multiple metrics including confusion matrix and cross-validation
@@ -37,18 +43,18 @@ This project implements an advanced image processing system integrated with mach
 ## ⚙️ How the System Works
 
 1. Upload a chest X-ray image
-2. Image is preprocessed — resized to 224×224 and normalized
-3. CNN automatically extracts features from the image
+2. Image is preprocessed — resized to 224×224 and normalized to [0, 1]
+3. CNN automatically extracts visual features from the image
 4. Model predicts **Normal** or **Pneumonia**
-5. Result is returned with a confidence score
+5. Prediction is returned with a confidence score
 
 ---
 
 ## 🎯 Project Objectives
 
-- **Analyze Effectiveness of ML Algorithms:** Compare different ML algorithms (CNNs vs SVMs) for medical image analysis
+- **Analyze Effectiveness of ML Algorithms:** Compare CNNs vs traditional methods (SIFT, LBP, RBM, SVM)
 - **Evaluate Preprocessing Techniques:** Investigate the impact of normalization, augmentation, and segmentation on model performance
-- **Create Prototype System:** Develop a user-friendly demonstration system for clinical pneumonia diagnosis
+- **Create Prototype System:** Develop a demonstration system for clinical pneumonia diagnosis
 - **Enhance Diagnostic Accuracy:** Reduce human error and improve consistency in pneumonia detection
 
 ---
@@ -57,32 +63,32 @@ This project implements an advanced image processing system integrated with mach
 
 ### Validation Metrics (During Training)
 
-| Metric    | Value  |
-|-----------|--------|
-| Accuracy  | 90.67% |
-| Precision | 90.5%  |
-| Recall    | 90.7%  |
-| F1-score  | 90.5%  |
-| AUC-ROC   | 0.977  |
+| Metric | Value |
+|--------|-------|
+| Accuracy | 90.67% |
+| Precision | 90.5% |
+| Recall | 90.7% |
+| F1-score | 90.5% |
+| AUC-ROC | 0.977 |
 
 ### Test Metrics (Final Evaluation)
 
-| Metric    | Value  |
-|-----------|--------|
-| Accuracy  | 96.2%  |
-| Precision | 95.7%  |
-| Recall    | 94.8%  |
-| F1-score  | 95.2%  |
-| AUC-ROC   | 0.977  |
+| Metric | Value |
+|--------|-------|
+| Accuracy | 96.2% |
+| Precision | 95.7% |
+| Recall | 94.8% |
+| F1-score | 95.2% |
+| AUC-ROC | 0.977 |
 
 ### Comparison with Other Models
 
-| Model                  | Accuracy  | Precision | Recall | F1-Score |
-|------------------------|-----------|-----------|--------|----------|
-| SIFT                   | 70.59%    | 64.29%    | 100%   | 78.26%   |
-| LBP                    | 82.35%    | 80%       | 88.89% | 84.21%   |
-| RBM                    | 58.82%    | 56.25%    | 100%   | 72%      |
-| CNN (Baseline)         | 83.21%    | 87.11%    | 93.33% | 90.11%   |
+| Model | Accuracy | Precision | Recall | F1-Score |
+|-------|----------|-----------|--------|----------|
+| SIFT | 70.59% | 64.29% | 100% | 78.26% |
+| LBP | 82.35% | 80% | 88.89% | 84.21% |
+| RBM | 58.82% | 56.25% | 100% | 72% |
+| CNN (Baseline) | 83.21% | 87.11% | 93.33% | 90.11% |
 | **CNN (This Project)** | **96.2%** | **95.7%** | **94.8%** | **95.2%** |
 
 > **Note:** CNN (Baseline) is a standard unoptimized CNN. "This Project" is the fine-tuned model with data augmentation and optimized hyperparameters.
@@ -97,7 +103,7 @@ This project implements an advanced image processing system integrated with mach
 - **Convolutional Layers:** Multiple layers with 64, 128, and 256 filters
 - **Pooling Layers:** Max pooling for dimensionality reduction
 - **Fully Connected Layers:** Dense layers with ReLU activation
-- **Dropout Layer:** 0.5 dropout for regularization
+- **Dropout Layer:** 0.5 dropout rate for regularization
 - **Output Layer:** Sigmoid activation for binary classification
 
 ### Data Flow
@@ -129,6 +135,7 @@ Model Evaluation & Validation
 - Balanced class distribution to prevent model bias
 - High-quality annotations by experienced radiologists
 - Images from diverse patient demographics and acquisition equipment
+- Dataset sourced from [Kaggle: Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
 
 ---
 
@@ -179,6 +186,12 @@ jupyter
 python src/train.py --epochs 50 --batch-size 32 --learning-rate 0.001
 ```
 
+### Evaluating the Model
+
+```bash
+python src/evaluate.py --data-dir data/ --model-path models/pneumonia_detector.h5
+```
+
 ### Making Predictions
 
 ```bash
@@ -196,7 +209,7 @@ jupyter notebook notebooks/Medical_Image_Classification.ipynb
 ## 📁 Project Structure
 
 ```
-pneumonia-detection-cnn/
+medical-image-classification-system1/
 ├── README.md                           # This file
 ├── LICENSE                             # MIT License
 ├── requirements.txt                    # Python dependencies
@@ -208,10 +221,10 @@ pneumonia-detection-cnn/
 ├── src/                                # Source code
 │   ├── __init__.py
 │   ├── model.py                        # CNN model architecture
-│   ├── data_loader.py                  # Data loading utilities
+│   ├── data_loader.py                  # Data loading & augmentation
 │   ├── preprocessing.py                # Image preprocessing
 │   ├── train.py                        # Training script
-│   ├── evaluate.py                     # Evaluation metrics
+│   ├── evaluate.py                     # Evaluation & metrics
 │   └── predict.py                      # Inference script
 │
 ├── models/                             # Trained model weights
@@ -242,8 +255,6 @@ pneumonia-detection-cnn/
 ---
 
 ## 🔧 Configuration
-
-### Hyperparameters
 
 ```python
 # Training Configuration
@@ -276,22 +287,20 @@ HORIZONTAL_FLIP = True
 
 ### Confusion Matrix (Validation Set)
 
-|                      | Predicted Normal | Predicted Pneumonia |
-|----------------------|------------------|---------------------|
-| **Actual Normal**    | 14               | 4                   |
-| **Actual Pneumonia** | 3                | 54                  |
+| | Predicted Normal | Predicted Pneumonia |
+|---|---|---|
+| **Actual Normal** | 14 | 4 |
+| **Actual Pneumonia** | 3 | 54 |
 
-| Metric    | Value |
-|-----------|-------|
+| Metric | Value |
+|--------|-------|
 | Precision | 0.905 |
-| Recall    | 0.907 |
-| F1-score  | 0.905 |
+| Recall | 0.907 |
+| F1-score | 0.905 |
 
 ---
 
 ## 📷 Results Visualization
-
-> Upload your plot images to the `images/` folder and they will display here automatically.
 
 ### Training Accuracy & Loss
 ![Training Accuracy](images/accuracy_plot.png)
@@ -332,13 +341,19 @@ HORIZONTAL_FLIP = True
 
 ---
 
+## ⚠️ Disclaimer
+
+This project is intended for **academic and research purposes only**. It is not approved for clinical or commercial medical use. All predictions must be reviewed by qualified healthcare professionals before any action is taken.
+
+---
+
 ## 🚀 Future Work
 
 ### Extensions
 - **Multi-Disease Detection:** Extend framework for tuberculosis, COVID-19, and other lung diseases
 - **Real-Time Implementation:** Optimize for deployment on edge devices and low-bandwidth environments
 - **Ensemble Methods:** Combine multiple models for improved robustness
-- **Explainability:** Implement interpretability tools (Grad-CAM, LIME) for clinical transparency
+- **Explainability:** Implement Grad-CAM and LIME for clinical transparency
 
 ### Improvements
 - Increase training dataset diversity
@@ -388,8 +403,8 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 - **Author:** Sai Dumpala
 - **Email:** dumpalasairamkrishnareddy@gmail.com
-- **GitHub:** [https://github.com/SAIDUMPALA01/medical-image-classification-system1](https://github.com/SAIDUMPALA01/medical-image-classification-system1)
-- **LinkedIn:** [www.linkedin.com/in/sai-dumpala](https://www.linkedin.com/in/sai-dumpala)
+- **GitHub:** [SAIDUMPALA01](https://github.com/SAIDUMPALA01/medical-image-classification-system1)
+- **LinkedIn:** [sai-dumpala](https://www.linkedin.com/in/sai-dumpala)
 
 ---
 
@@ -398,9 +413,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 - Kaggle for providing the Chest X-ray Pneumonia Dataset
 - TensorFlow and Keras communities for excellent deep learning frameworks
 - All radiologists and medical professionals who contributed to dataset annotations
-- Research institutions and universities supporting this work
-
-> **Note:** This is a research project and should not be used for clinical diagnosis without proper regulatory validation and professional medical oversight.
+- Birmingham City University for academic support and guidance
 
 ---
 
