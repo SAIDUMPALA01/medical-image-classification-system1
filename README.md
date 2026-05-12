@@ -1,4 +1,3 @@
-[README1.md](https://github.com/user-attachments/files/27619573/README1.md)
 # Medical Image Classification System
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue) ![License: MIT](https://img.shields.io/badge/License-MIT-green) ![TensorFlow 2.x](https://img.shields.io/badge/TensorFlow-2.x-orange)
 
@@ -35,6 +34,16 @@ This project implements an advanced image processing system integrated with mach
 
 ---
 
+## ⚙️ How the System Works
+
+1. Upload a chest X-ray image
+2. Image is preprocessed — resized to 224×224 and normalized
+3. CNN automatically extracts features from the image
+4. Model predicts **Normal** or **Pneumonia**
+5. Result is returned with a confidence score
+
+---
+
 ## 🎯 Project Objectives
 
 - **Analyze Effectiveness of ML Algorithms:** Compare different ML algorithms (CNNs vs SVMs) for medical image analysis
@@ -68,15 +77,15 @@ This project implements an advanced image processing system integrated with mach
 
 ### Comparison with Other Models
 
-| Model              | Accuracy | Precision | Recall | F1-Score |
-|--------------------|----------|-----------|--------|----------|
-| SIFT               | 70.59%   | 64.29%    | 100%   | 78.26%   |
-| LBP                | 82.35%   | 80%       | 88.89% | 84.21%   |
-| RBM                | 58.82%   | 56.25%    | 100%   | 72%      |
-| CNN (Baseline)     | 83.21%   | 87.11%    | 93.33% | 90.11%   |
+| Model                  | Accuracy  | Precision | Recall | F1-Score |
+|------------------------|-----------|-----------|--------|----------|
+| SIFT                   | 70.59%    | 64.29%    | 100%   | 78.26%   |
+| LBP                    | 82.35%    | 80%       | 88.89% | 84.21%   |
+| RBM                    | 58.82%    | 56.25%    | 100%   | 72%      |
+| CNN (Baseline)         | 83.21%    | 87.11%    | 93.33% | 90.11%   |
 | **CNN (This Project)** | **96.2%** | **95.7%** | **94.8%** | **95.2%** |
 
-> **Note:** The baseline CNN row represents a standard unoptimized CNN. "This Project" refers to the fine-tuned model with data augmentation and optimized hyperparameters.
+> **Note:** CNN (Baseline) is a standard unoptimized CNN. "This Project" is the fine-tuned model with data augmentation and optimized hyperparameters.
 
 ---
 
@@ -146,6 +155,20 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Key Dependencies
+
+```
+tensorflow>=2.8.0
+keras
+numpy
+opencv-python
+matplotlib
+seaborn
+scikit-learn
+pandas
+jupyter
+```
+
 ---
 
 ## 📚 Usage
@@ -204,6 +227,11 @@ pneumonia-detection-cnn/
 │   ├── METHODOLOGY.md                  # Research methodology
 │   └── RESULTS.md                      # Results analysis
 │
+├── images/                             # Result visualizations
+│   ├── confusion_matrix.png
+│   ├── accuracy_plot.png
+│   └── sample_predictions.png
+│
 └── tests/                              # Unit tests
     ├── __init__.py
     ├── test_preprocessing.py
@@ -242,36 +270,34 @@ HORIZONTAL_FLIP = True
 ### Key Findings
 
 1. **High Test Accuracy:** The CNN model achieved 96.2% accuracy on the test set (90.67% on the validation set), outperforming traditional methods like SIFT and LBP.
-
 2. **Low False Negative Rate:** With 94.8% recall, the model effectively identifies pneumonia cases, minimizing missed diagnoses.
-
 3. **Balanced Performance:** The F1-score of 95.2% demonstrates excellent balance between precision and recall.
-
 4. **Superior ROC-AUC:** The AUC-ROC of 0.977 indicates excellent discrimination between pneumonia-positive and pneumonia-negative cases.
 
 ### Confusion Matrix (Validation Set)
 
-```
-Predicted:   Normal   Pneumonia
-Actual Normal:   14         4
-Actual Pneumonia: 3        54
+|                      | Predicted Normal | Predicted Pneumonia |
+|----------------------|------------------|---------------------|
+| **Actual Normal**    | 14               | 4                   |
+| **Actual Pneumonia** | 3                | 54                  |
 
-Precision: 0.905
-Recall:    0.907
-F1-score:  0.905
-```
+| Metric    | Value |
+|-----------|-------|
+| Precision | 0.905 |
+| Recall    | 0.907 |
+| F1-score  | 0.905 |
 
 ---
 
-## 📷 Sample Results
+## 📷 Results Visualization
 
-> **To add your images:** Create an `images/` folder in your repo and upload your plots, then these will display automatically.
-
-### Confusion Matrix
-![Confusion Matrix](images/confusion_matrix.png)
+> Upload your plot images to the `images/` folder and they will display here automatically.
 
 ### Training Accuracy & Loss
 ![Training Accuracy](images/accuracy_plot.png)
+
+### Confusion Matrix
+![Confusion Matrix](images/confusion_matrix.png)
 
 ### Sample Predictions
 ![Sample Predictions](images/sample_predictions.png)
@@ -378,7 +404,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-## Citation
+## 📖 Citation
 
 ```bibtex
 @software{pneumonia_detection_2025,
