@@ -29,14 +29,12 @@ This project implements an advanced image processing system integrated with mach
 
 ### Validation Metrics
 
-| Metric | Value |
-|--------|-------|
-| **Validation Accuracy** | 83.21% |
-| **Test Accuracy** | 96.2% |
-| **Precision** | 95.7% |
-| **Recall** | 94.8% |
-| **F1-Score** | 95.2% |
-| **AUC-ROC** | 0.977 |
+Metric   	Value
+Accuracy	90.67%
+Precision	90.5%
+Recall	        90.7%
+F1-score	90.5%
+AUC-ROC	        0.977
 
 ### Comparison with Other Models
 
